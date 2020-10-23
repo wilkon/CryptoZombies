@@ -17,4 +17,11 @@ contract ZombieHelper {
         require(msg.sender == zombieToOwner[_zombieId]);
         zombies[_zombieId].dna = _newDna;
     }
+
+    function getZombiesByOwner(address _owner) external view returns (uint[] memory) {
+        uint[] memory result = new uint[](ownerZombieCount[_owner]);
+
+        return result;
+    }
 }
+ 
